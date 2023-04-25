@@ -1,29 +1,4 @@
 export const Styles = {
-  //HomeScreen
-
-  root: {
-    flex: 1,
-    marginTop: 16,
-    alignItems:'center'
-  },
-  homeTitle: {
-    textAlign: "center",
-    fontSize: 24,
-  },
-
-  //UserScreen
-
-  containerUserScreen: {
-    flex: 1,
-    marginTop: 15,
-    marginBottom: 25 
-  },
-  title: {
-    textAlign: "center",
-    fontSize: 24,
-    color: "#FFC759",
-  },
-
   //CARD
   cardContainer: {
     flexDirection: "row",

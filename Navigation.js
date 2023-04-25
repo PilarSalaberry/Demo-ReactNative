@@ -5,7 +5,6 @@ import { UserScreen } from "./screens/UsersScreen/UserScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { EditorScreen } from "./screens/EditorScreen";
 import { Ionicons } from "@expo/vector-icons";
-import UserDetailScreen from "./screens/UserDetailScreen";
 
 export default function Navigation() {
   const Stack = createNativeStackNavigator();
@@ -61,11 +60,6 @@ export default function Navigation() {
         <Stack.Screen
           name="UsersList"
           component={UserScreen}
-          options={{ title: "Demo 1" }}
-        />
-        <Stack.Screen
-          component={UserDetailScreen}
-          name="UserDetailScreen"
           options={{ title: "Demo 1" }}
         />
       </Stack.Navigator>

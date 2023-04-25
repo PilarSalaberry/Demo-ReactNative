@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Image } from "react-native";
-import { Styles } from "../utilities/Styles";
+import { Styles } from "./CardStyles";
 
 export const Card = ({url, login, id}) => {
 
