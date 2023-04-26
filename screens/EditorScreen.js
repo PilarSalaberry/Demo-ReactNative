@@ -18,7 +18,7 @@ export const EditorScreen = () => {
   };
 
   const selectUserDetailHandler = (login) => {
-    navigation.navigate('DetailUser', {
+    navigation.navigate('EditorUserDetail', {
       userLogin: login
     });
   };

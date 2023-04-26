@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { EditorScreen } from "../screens/EditorScreen";
-import { DetailUser } from "../screens/DetailUser";
+import { EditorUserDetail } from "../screens/EditorUserDetail";
 
 
 export const EditorStackNavigation = () => {
@@ -15,7 +15,7 @@ export const EditorStackNavigation = () => {
       }}
     >
       <Stack.Screen name="Editor" component={EditorScreen} />
-    {/*   <Stack.Screen name="DetailUser" component={DetailUser}/> */}
+      <Stack.Screen name="EditorUserDetail" component={EditorUserDetail}/>
     </Stack.Navigator>
   );
 };
