@@ -9,7 +9,7 @@ export default function List({ apiUsers }) {
 
   return (
     <FlatList
-      data={apiUsers.slice(0, 8)}
+      data={apiUsers}
       renderItem={userCardHandler}
       keyExtractor={(item, index) => {
         return item.id;
