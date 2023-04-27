@@ -15,7 +15,7 @@ export const EditorStackNavigation = () => {
       }}
     >
       <Stack.Screen name="Editor" component={EditorScreen} />
-      <Stack.Screen name="EditorUserDetail" component={EditorUserDetail}/>
+      <Stack.Screen name="EditorUserDetail" component={EditorUserDetail} options={{title:'User Detail Edit'}}/>
     </Stack.Navigator>
   );
 };

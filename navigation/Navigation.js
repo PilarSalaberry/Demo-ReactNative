@@ -1,12 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen } from "../screens/Home/HomeScreen";
-import { UserScreen } from "../screens/UsersScreen/UserScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { EditorScreen } from "../screens/EditorScreen";
 import { Ionicons } from "@expo/vector-icons";
-import { UserDetail } from "../screens/UserDetail";
-
 import { EditorStackNavigation } from "./EditorStackNavigation";
 import { HomeStackNavigation } from "./HomeStackNavigation";
 
@@ -14,7 +9,7 @@ export default function Navigation() {
   const Stack = createNativeStackNavigator();
   const BottomTab = createBottomTabNavigator();
 
-   return (
+  return (
     <NavigationContainer>
       <BottomTab.Navigator
         screenOptions={{
@@ -30,7 +25,7 @@ export default function Navigation() {
             tabBarIcon: () => (
               <Ionicons name="home" size={24} color="#FFC759" />
             ),
-            title: 'Home'
+            title: "Home",
           }}
         />
         <BottomTab.Screen
@@ -41,7 +36,7 @@ export default function Navigation() {
               <Ionicons name="pencil" size={24} color="#FFC759" />
             ),
             tabBarLabel: "Editor",
-            headerShown: false
+            headerShown: false,
           }}
         />
       </BottomTab.Navigator>

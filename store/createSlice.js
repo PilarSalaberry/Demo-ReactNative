@@ -1,4 +1,4 @@
-import { combineReducers, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const dataUsers = createSlice({
   name: "dataUsers",
@@ -11,7 +11,7 @@ const dataUsers = createSlice({
     },
     clearUsers: (state) => {
       state.dataUsers = [];
-    }
+    },
   },
 });
 
