@@ -1,7 +1,7 @@
 import { FlatList, Pressable } from "react-native";
-import { Card } from "../Card/Card";
+import {Card} from '../Card/Card'
 
-export default function List({ apiUsers, onPress }) {
+export const List = ({ apiUsers, onPress }) => {
   const userCardHandler = (itemData) => {
     const item = itemData.item;
     return (

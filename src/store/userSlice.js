@@ -10,8 +10,11 @@ const userSlice = createSlice({
     updateProfileInfo(state, action)  {
       state.profileInfo = action.payload;
     },
+    clearUser: (state) => {
+      state.profileInfo = [];
+    },
   },
 });
 
-export const { setProfileInfo, updateProfileInfo } = userSlice.actions;
+export const { setProfileInfo, updateProfileInfo, clearUser } = userSlice.actions;
 export default userSlice.reducer;

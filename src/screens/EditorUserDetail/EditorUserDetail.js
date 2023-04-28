@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native'
-import { EditorForm } from '../components/Input/EditorForm';
+import { EditorForm } from './EditorForm';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { setProfileInfo } from '../store/userSlice';
+import { setProfileInfo } from '../../store/userSlice';
 
 
 export const EditorUserDetail =({route}) => {

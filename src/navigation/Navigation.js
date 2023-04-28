@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { EditorStackNavigation } from "./EditorStackNavigation";
 import { HomeStackNavigation } from "./HomeStackNavigation";
 
-export default function Navigation() {
+export const Navigation = () => {
   const Stack = createNativeStackNavigator();
   const BottomTab = createBottomTabNavigator();
 
@@ -42,4 +42,4 @@ export default function Navigation() {
       </BottomTab.Navigator>
     </NavigationContainer>
   );
-}
+};

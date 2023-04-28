@@ -1,5 +1,5 @@
 export const Styles = {
-    containerUserScreen: {
+    containerUsersScreen: {
         flex: 1,
         marginTop: 15,
         marginBottom: 25 
