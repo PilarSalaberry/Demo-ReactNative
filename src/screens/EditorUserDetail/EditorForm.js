@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { Input } from "../../components/Input/Input";
 import { useEffect, useState } from "react";
 import { useDispatch} from "react-redux";
 import { updateProfileInfo} from '../../store/userSlice'
 import { Button } from "../../components/Button/Button";
 import { useNavigation } from "@react-navigation/native";
+import {Styles} from './EditorUserDetailStyles'
 
 export const EditorForm = ({ data}) => {
   const dispatch = useDispatch();
@@ -38,17 +39,17 @@ export const EditorForm = ({ data}) => {
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <Button onPress={clearInputsHandler} style={styles.buttonClear}>Clear</Button>
+        <Button onPress={clearInputsHandler} style={Styles.buttonClear}>Clear</Button>
       )
     })
   }, [navigation])
 
   return (
     <ScrollView >
-      <View style={styles.form}>
-        <Text style={styles.infoText}>Login: {data.login}</Text>
-        <Text style={styles.infoText}>Id: {data.id}</Text>
-        <Text style={styles.infoText}>Followers: {data.followers}</Text>
+      <View style={Styles.form}>
+        <Text style={Styles.infoText}>Login: {data.login}</Text>
+        <Text style={Styles.infoText}>Id: {data.id}</Text>
+        <Text style={Styles.infoText}>Followers: {data.followers}</Text>
         <Input
           label="Bio"
           onChange={(newBio) => setBio(newBio)}
@@ -74,8 +75,8 @@ export const EditorForm = ({ data}) => {
           onChange={(newName) => setName(newName)}
           placeholder={data.name} defaultValue={name}
         />
-        <View style={styles.buttonContainer}>
-          <Button style={styles.button} onPress={handleSubmit}>
+        <View style={Styles.buttonContainer}>
+          <Button style={Styles.button} onPress={handleSubmit}>
             Confirm
           </Button>
         </View>
@@ -83,36 +84,3 @@ export const EditorForm = ({ data}) => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  form: {
-    marginTop: 10,
-    marginHorizontal: 24,
-    marginBottom: 50
-  },
-  infoText: {
-    fontSize: 16,
-    color: "#607196",
-    marginVertical: 4,
-  },
-  button: {
-    backgroundColor: "#607196",
-    width: 150,
-    color: "#fff",
-    borderRadius: 10,
-    textAlign: "center",
-    padding: 8,
-    marginTop: 6,
-
-  },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-  },
-  buttonClear:{
-    backgroundColor: '#607196',
-    padding: 8,
-    borderRadius: 10,
-    color: '#fff'
-  }
-});

@@ -5,12 +5,14 @@ import { useState } from "react";
 import { Button } from "../../components/Button/Button";
 
 export const HomeScreen = ({ navigation }) => {
+  const [enteredNumber, setEnteredNumber] = useState('');
+
   const pressHandler = () => {
     navigation.navigate("UsersScreen", {
       quantity: enteredNumber,
     });
+    setEnteredNumber('');
   };
-  const [enteredNumber, setEnteredNumber] = useState(0);
 
   const inputHandler = (enteredNumber) => {
     setEnteredNumber(enteredNumber);
@@ -27,6 +29,7 @@ export const HomeScreen = ({ navigation }) => {
               style={Styles.input}
               keyboardType="number-pad"
               onChangeText={inputHandler}
+              defaultValue={enteredNumber}
             />
           </View>
           <View style={Styles.homeButtonContainer}>

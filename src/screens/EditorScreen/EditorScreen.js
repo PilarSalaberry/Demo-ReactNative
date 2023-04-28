@@ -1,7 +1,8 @@
-import { View, Text, FlatList, Pressable, StyleSheet } from "react-native";
+import { View, Text, FlatList, Pressable} from "react-native";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import {Styles} from './EditorScreenStyles'
 
 export const EditorScreen = () => {
   const data = useSelector((state) => state.dataUsers.dataUsers);
@@ -10,8 +11,8 @@ export const EditorScreen = () => {
   const renderItem = (data) => {
     const item = data.item;
     return (
-      <View style={styles.item}>
-        <Text style={styles.text}>{item.login}</Text>
+      <View style={Styles.item}>
+        <Text style={Styles.text}>{item.login}</Text>
         <Pressable onPress={() => selectUserDetailHandler(item.login)}>
           <Ionicons name="pencil" size={22} />
         </Pressable>
@@ -28,12 +29,12 @@ export const EditorScreen = () => {
   return (
     <>
       {!data.length ? (
-        <View style={styles.noDataContainer}>
-          <Text style={styles.noDataText}>No users</Text>
+        <View style={Styles.noDataContainer}>
+          <Text style={Styles.noDataText}>No users</Text>
         </View>
       ) : (
         <View>
-          <Text style={styles.editorText}>Tap to edit!</Text>
+          <Text style={Styles.editorText}>Tap to edit!</Text>
           <FlatList
             data={data}
             renderItem={renderItem}
@@ -41,7 +42,7 @@ export const EditorScreen = () => {
               return item.id;
             }}
           />
-          <Text style={styles.infoText}>
+          <Text style={Styles.infoText}>
             Remember that you only can edit bio, blog, location, name and email
           </Text>
         </View>
@@ -49,39 +50,3 @@ export const EditorScreen = () => {
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  item: {
-    flexDirection: "row",
-    backgroundColor: "#E8E9ED",
-    margin: 10,
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    borderRadius: 15,
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  text: {
-    fontSize: 20,
-    color: "#607196",
-  },
-  editorText: {
-    fontSize: 26,
-    textAlign: "center",
-    margin: 10,
-    color: "#FFC759",
-  },
-  noDataContainer: {
-    alignItems: "center",
-    flex: 1,
-    justifyContent: "center",
-  },
-  noDataText: {
-    fontSize: 20,
-    color: "#607196",
-  },
-  infoText: {
-    paddingHorizontal: 18,
-    marginVertical: 10
-  }
-});
